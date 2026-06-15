@@ -1,0 +1,6 @@
+{
+  "name": "Pustaka Analisis dan Riset Ekonomi Sains",
+  "description": "Aplikasi pencatatan pertanyaan dan analisis jawaban komprehensif dari berbagai disiplin ilmu termasuk ekonomi, sains, teknologi, regulasi, dan alam dengan rujukan literatur ilmiah tepercaya.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

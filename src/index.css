@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom fade-in simple animation helper */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animation-fade-in {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- THEME 1: LUKS AKADEMIS --- */
+.theme-luks-akademis {
+  background-color: #fdfbf7;
+  color: #1e293b;
+}
+
+.theme-luks-akademis .font-serif-header {
+  font-family: var(--font-serif);
+}
+
+.theme-luks-akademis .academic-card {
+  background-color: #fffdfa;
+  border-color: #f1ebd9;
+  border-width: 1px;
+  box-shadow: 0 4px 24px -2px rgba(139, 92, 26, 0.04);
+}
+
+.theme-luks-akademis .academic-header {
+  background: linear-gradient(135deg, #153a2d 0%, #0d261e 100%);
+  border-bottom: 3px solid #d4af37;
+}
+
+/* --- THEME 2: NEON LAB (Scientific tech grid) --- */
+.theme-neon-lab {
+  background-color: #0c0f17;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.03) 0, transparent 40%),
+    radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.05) 0, transparent 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.002) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.002) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  color: #f1f5f9;
+}
+
+.theme-neon-lab .neon-grid-header {
+  background: linear-gradient(135deg, #090d16 0%, #111827 100%);
+  border-bottom: 2px solid #6366f1;
+}
+
+.theme-neon-lab .neon-tech-card {
+  background-color: rgba(17, 24, 39, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.theme-neon-lab .neon-glow-btn {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+}
+
+.theme-neon-lab input, 
+.theme-neon-lab select, 
+.theme-neon-lab textarea {
+  background-color: #111827;
+  border-color: rgba(99, 102, 241, 0.25);
+  color: #f3f4f6;
+}
+
+.theme-neon-lab td,
+.theme-neon-lab th {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- THEME-NEON-LAB READABILITY CONTRAST OVERRIDES --- */
+.theme-neon-lab .text-slate-900,
+.theme-neon-lab .text-slate-800,
+.theme-neon-lab .text-slate-750,
+.theme-neon-lab .text-slate-700,
+.theme-neon-lab .text-slate-650,
+.theme-neon-lab .text-slate-600,
+.theme-neon-lab .text-slate-500,
+.theme-neon-lab strong,
+.theme-neon-lab b {
+  color: #f1f5f9 !important; /* Force high contrast off-white text */
+}
+
+.theme-neon-lab .text-slate-500,
+.theme-neon-lab .text-slate-400,
+.theme-neon-lab p.text-slate-500,
+.theme-neon-lab span.text-slate-500 {
+  color: #94a3b8 !important; /* Force accessible silver/gray secondary text */
+}
+
+/* Specific Markdown and analysis dimension paragraphs/summaries */
+.theme-neon-lab .italic.text-slate-750,
+.theme-neon-lab .text-slate-755,
+.theme-neon-lab .text-slate-655,
+.theme-neon-lab .text-slate-650 {
+  color: #cbd5e1 !important; /* Light-gray for paragraph content */
+}
+
+/* Dynamic glowing category tags under dark mode */
+.theme-neon-lab .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  color: #f59e0b !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+.theme-neon-lab .bg-violet-50 {
+  background-color: rgba(139, 92, 246, 0.12) !important;
+  color: #a78bfa !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+}
+.theme-neon-lab .bg-cyan-50 {
+  background-color: rgba(6, 182, 212, 0.12) !important;
+  color: #22d3ee !important;
+  border-color: rgba(6, 182, 212, 0.3) !important;
+}
+.theme-neon-lab .bg-rose-50 {
+  background-color: rgba(244, 63, 94, 0.12) !important;
+  color: #fb7185 !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+.theme-neon-lab .bg-indigo-50 {
+  background-color: rgba(99, 102, 241, 0.12) !important;
+  color: #818cf8 !important;
+  border-color: rgba(99, 102, 241, 0.3) !important;
+}
+.theme-neon-lab .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+.theme-neon-lab .bg-slate-50,
+.theme-neon-lab .bg-slate-50\/40,
+.theme-neon-lab .bg-slate-100 {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Card inner nested bubbles and blocks background inversion */
+.theme-neon-lab .bg-slate-50\/60,
+.theme-neon-lab .bg-slate-100\/40,
+.theme-neon-lab .bg-white {
+  background-color: rgba(13, 17, 28, 0.85) !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Override borders specifically in neon mode */
+.theme-neon-lab .border-slate-100,
+.theme-neon-lab .border-slate-200,
+.theme-neon-lab .border-slate-300,
+.theme-neon-lab .border border-slate-100,
+.theme-neon-lab .border-slate-250,
+.theme-neon-lab .border-slate-105 {
+  border-color: rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Specific agent badge and profile highlights */
+.theme-neon-lab .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+.theme-neon-lab .bg-cyan-100 {
+  background-color: rgba(6, 182, 212, 0.15) !important;
+  color: #22d3ee !important;
+  border-color: rgba(6, 182, 212, 0.3) !important;
+}
+.theme-neon-lab .bg-orange-100 {
+  background-color: rgba(249, 115, 22, 0.15) !important;
+  color: #fb923c !important;
+  border-color: rgba(249, 115, 22, 0.3) !important;
+}
+.theme-neon-lab .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+.theme-neon-lab .bg-sky-100 {
+  background-color: rgba(14, 165, 233, 0.15) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(14, 165, 233, 0.3) !important;
+}
+.theme-neon-lab .bg-indigo-100 {
+  background-color: rgba(99, 102, 241, 0.15) !important;
+  color: #818cf8 !important;
+  border-color: rgba(99, 102, 241, 0.3) !important;
+}
+.theme-neon-lab .bg-rose-100 {
+  background-color: rgba(244, 63, 94, 0.15) !important;
+  color: #fb7185 !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+.theme-neon-lab .bg-purple-100 {
+  background-color: rgba(168, 85, 247, 0.15) !important;
+  color: #c084fc !important;
+  border-color: rgba(168, 85, 247, 0.3) !important;
+}
+
+
+/* --- THEME 3: SEDERHANA MODERN (Swiss design) --- */
+.theme-sederhana-modern {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+.theme-sederhana-modern .swiss-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.theme-sederhana-modern .swiss-header {
+  background-color: #121212;
+  border-bottom: 4px solid #f43f5e;
+}
+
+/* Glassmorphic elements */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-glass-effect {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Dynamic component classes that adapt by theme */
+
+/* General Card Class */
+.research-ui-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.theme-luks-akademis .research-ui-card {
+  background-color: #fffdfa;
+  border: 1px solid #f1ebd9;
+  box-shadow: 0 4px 24px -2px rgba(139, 92, 26, 0.04);
+  border-radius: 20px;
+}
+.theme-neon-lab .research-ui-card {
+  background-color: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+}
+.theme-sederhana-modern .research-ui-card {
+  background-color: #ffffff;
+  border: 2px solid #111111;
+  box-shadow: 5px 5px 0px #111111;
+  border-radius: 0 tracking-tight;
+}
+
+/* Titles */
+.research-ui-title {
+  transition: font-family 0.3s ease;
+}
+.theme-luks-akademis .research-ui-title {
+  font-family: var(--font-serif);
+  color: #1a3c2f;
+}
+.theme-neon-lab .research-ui-title {
+  font-family: var(--font-mono);
+  color: #a5b4fc;
+}
+.theme-sederhana-modern .research-ui-title {
+  font-family: var(--font-sans);
+  color: #111111;
+  font-weight: 900;
+}
+
+/* Form inputs & selectivity elements */
+.research-ui-input {
+  transition: all 0.25s ease;
+}
+.theme-luks-akademis .research-ui-input {
+  background-color: #fdfcf8;
+  border: 1px solid #e2dabf;
+  border-radius: 12px;
+}
+.theme-luks-akademis .research-ui-input:focus {
+  border-color: #102d22;
+  box-shadow: 0 0 0 3px rgba(16, 45, 34, 0.1);
+}
+.theme-neon-lab .research-ui-input {
+  background-color: #0f121d;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  color: #f8fafc;
+  border-radius: 8px;
+}
+.theme-neon-lab .research-ui-input:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+}
+.theme-sederhana-modern .research-ui-input {
+  background-color: #ffffff;
+  border: 2px solid #111111;
+  border-radius: 0;
+  color: #111111;
+}
+.theme-sederhana-modern .research-ui-input:focus {
+  box-shadow: 3px 3px 0px #111111;
+}
+
+/* Tab button controllers */
+.research-ui-tab {
+  transition: all 0.2s ease;
+}
+.theme-luks-akademis .research-ui-tab-active {
+  border-bottom-color: #102d22;
+  color: #102d22;
+  font-family: var(--font-serif);
+}
+.theme-neon-lab .research-ui-tab-active {
+  border-bottom-color: #6366f1;
+  color: #818cf8;
+  font-family: var(--font-mono);
+}
+.theme-sederhana-modern .research-ui-tab-active {
+  border-bottom-color: #f43f5e;
+  color: #111111;
+  font-weight: 900;
+}
+
+/* Decorative background ray */
+.ambient-ray {
+  filter: blur(130px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Premium Contrast & Readability Overrides for Dark Mode Themes */
+.theme-neon-lab .text-emerald-700,
+.theme-neon-lab .text-emerald-750,
+.theme-neon-lab .text-emerald-800,
+.theme-neon-lab .text-emerald-900,
+.theme-neon-lab .text-emerald-650,
+.theme-neon-lab .text-emerald-600 {
+  color: #34d399 !important; /* Bright emerald */
+}
+
+.theme-neon-lab .text-rose-700,
+.theme-neon-lab .text-rose-750,
+.theme-neon-lab .text-rose-800,
+.theme-neon-lab .text-rose-900,
+.theme-neon-lab .text-rose-650,
+.theme-neon-lab .text-rose-600 {
+  color: #fb7185 !important; /* Bright rose */
+}
+
+.theme-neon-lab .text-amber-700,
+.theme-neon-lab .text-amber-750,
+.theme-neon-lab .text-amber-800,
+.theme-neon-lab .text-amber-900,
+.theme-neon-lab .text-amber-650,
+.theme-neon-lab .text-amber-600 {
+  color: #fbbf24 !important; /* Bright amber */
+}
+
+.theme-neon-lab .text-cyan-700,
+.theme-neon-lab .text-cyan-750,
+.theme-neon-lab .text-cyan-800,
+.theme-neon-lab .text-cyan-900,
+.theme-neon-lab .text-cyan-650,
+.theme-neon-lab .text-cyan-600 {
+  color: #22d3ee !important; /* Bright cyan */
+}
+
+.theme-neon-lab .text-violet-700,
+.theme-neon-lab .text-violet-750,
+.theme-neon-lab .text-violet-800,
+.theme-neon-lab .text-violet-900,
+.theme-neon-lab .text-violet-650,
+.theme-neon-lab .text-violet-600 {
+  color: #c084fc !important; /* Bright violet */
+}
+
+.theme-neon-lab .text-indigo-700,
+.theme-neon-lab .text-indigo-750,
+.theme-neon-lab .text-indigo-800,
+.theme-neon-lab .text-indigo-900,
+.theme-neon-lab .text-indigo-650,
+.theme-neon-lab .text-indigo-600 {
+  color: #a5b4fc !important; /* Bright indigo */
+}
+
+.theme-neon-lab .text-blue-600,
+.theme-neon-lab .text-blue-700,
+.theme-neon-lab .text-blue-800 {
+  color: #60a5fa !important; /* Bright blue */
+}
+
+.theme-neon-lab .text-slate-650,
+.theme-neon-lab .text-slate-700,
+.theme-neon-lab .text-slate-750,
+.theme-neon-lab .text-slate-800 {
+  color: #cbd5e1 !important; /* Highly readable light gray */
+}
+
+.theme-neon-lab .text-gray-650,
+.theme-neon-lab .text-gray-700,
+.theme-neon-lab .text-gray-750,
+.theme-neon-lab .text-gray-800 {
+  color: #f1f5f9 !important; /* Off-white text */
+}
+
+/* Ensure markdown-rendered tags have premium visibility in the dark mode */
+.theme-neon-lab .markdown-body p,
+.theme-neon-lab .markdown-body li {
+  color: #ccd6f6 !important;
+}
+
+.theme-neon-lab .markdown-body strong {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
